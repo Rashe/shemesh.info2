@@ -1,0 +1,35 @@
+$about_color: #008CBA;
+
+body.about {
+//  background: #f9f6f1;
+}
+
+hr {
+  border: solid #DDDDDD;
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 1.11111rem 0 1.05556rem;
+  height: 0;
+}
+
+.about {
+  color: #000;
+//  margin-left: 20px;
+  h1, p {
+    color: #000;
+    margin-left: 20px;
+    font-size: 3em;
+  }
+
+  p {
+    color: #555;
+    font-size: 2em;
+  }
+  .nav_text {
+    color: #000;
+  }
+}
+
+#about {
+  margin: 16% 0 0 25%;
+}

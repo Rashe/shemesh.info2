@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% if post_data.post_title %}
+    <title>{{post_data.post_title}}</title>
+    {% else %}
+    <title>{{data.blog_def_title}}</title>
+    {% endif %}
+    <meta name="description" content="{{data.meta_descti_blog}}">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+
+    {# CSS #}
+    {% block css_include %}
+    {% include '../parts/css_include.html' %}
+    {% endblock %}
+
+    {# JS #}
+    {% block js_include %}
+    {% include '../parts/js_include.html' %}
+    {% endblock %}
+</head>
+<body class="{{css}}">
+<aside id="aside_nav">
+    {# NAVIGATION #}
+    {% block nav %}
+    {% include '../parts/nav_blog.html' with data%}
+    {% endblock %}
+</aside>
+
+
+{# CONTENT #}
+{% block content %}{% endblock %}
+
+{# TRACKING #}
+{% block track %}
+{% include '../parts/tracking.html' with data%}
+{% endblock %}
+</body>
+</html>
