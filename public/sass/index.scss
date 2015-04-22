@@ -9,18 +9,19 @@
   display: $bl;
   height: 300px;
   position: relative;
-  color: $color_white;
+  color: $color_main;
   text-align: center;
   top: -800px;
   overflow: hidden;
+  z-index: 2;
 }
 
 .search_form {
   display: $bl;
   width: 40%;
   position: relative;
-  color: $color_white;
-  margin: 10px auto;
+  color: $color_main;
+  margin: 0 auto;
   text-align: center;
 
   input {
@@ -95,4 +96,40 @@
   width: 150px;
   height: 150px;
   background-color: red;
+}
+
+@media screen and (max-width: 900px) and (orientation:landscape) {
+
+  .search_form{
+    width: inherit;
+    margin: -18% auto 0;
+  }
+
+}
+
+@media screen and (max-width: 700px) and (orientation:portrait) {
+  .search_form{
+    width: inherit;
+    margin: -18% auto 0;
+
+    button {
+     width: inherit;
+    }
+
+    input{
+      width: 57%;
+    }
+
+  }
+
+  #eban{
+
+    img{
+      width: 100%;
+    }
+  }
+
+  .message{
+    margin-top: 2em;
+  }
 }

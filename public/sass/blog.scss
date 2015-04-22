@@ -1,20 +1,15 @@
 $blog_color: #008CBA;
-$blog_font: "PT Serif", serif;
-$font_family: Arial, "MS Trebuchet", sans-serif;
+$blog_font: "Courier New", Courier, monospace;
+$font_family: "Courier New", Courier, monospace;
 
 body.blog {
-  background: #f9f6f1;
+  background: #fff;
   font-family: $blog_font;
 }
 
 .blog {
-  #aside_nav {
-    .clopener {
-      top: -20px;
-    }
-  }
+
   #inside {
-    width: 13%;
 
     &.hidden {
       width: 0;
@@ -22,9 +17,14 @@ body.blog {
   }
 
   #aside_nav {
+
+    &.hidden {
+      width: 0;
+    }
+
     .clopener {
-      left: 13.1%;
-      position: fixed;
+      left: 100%;
+      top: -7%;
 
       &.clopener_pos {
         left: 0;
@@ -40,7 +40,9 @@ body.blog {
 
 #blogeg, #blogeg_article {
   width: 60%;
-  margin: 0 0 0 24%;
+//  margin: 0 0 0 9%;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .heading_row {
@@ -56,7 +58,7 @@ body.blog {
 
 .post_wra {
   width: 100%;
-  margin-top: 40px;
+  margin-top: 40;
   margin-bottom: 25px;
 }
 
@@ -71,7 +73,7 @@ body.blog {
   color: $blog_color;
   text-decoration: none;
   font-size: 1.5em;
-  font-family: $font_family;
+  font-family: Arial, "MS Trebuchet", sans-serif;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
@@ -93,7 +95,7 @@ body.blog {
     color: #999;
     font-size: 1em;
     display: block;
-    margin-bottom: 5px;
+    margin-top: 0.4em;
   }
 }
 
@@ -115,10 +117,10 @@ body.blog {
   line-height: 1.2em;
   font-size: 1.65em;
   color: #3A4145;
-  margin: 8px 0;
+  margin: 1em 0;
   p {
     color: #3A4145;
-    margin: 8px 0;
+    margin: 1em 0;
     font-size: inherit;
     line-height: inherit;
     display: inline;
@@ -128,7 +130,7 @@ body.blog {
     color: $blog_color;
 
     &:hover {
-      text-shadow: 1px 0px 0px #000;
+      text-shadow: 1px 0 0 #000;
       text-decoration: underline;
     }
   }
@@ -151,12 +153,12 @@ body.blog {
 }
 
 .readMore:hover, .comments:hover {
-  text-shadow: 1px 0px 0px #000;
+  text-shadow: 1px 0 0 #000;
   text-decoration: underline;
 }
 
 #sharing {
-  margin: 21px 0;
+  margin: 2em 0;
 }
 
 .more_link {

@@ -69,7 +69,7 @@ if (app.get('env') === 'development') {
         console.log('error from app.js', err);
         res.status(err.status || 500);
         var data_content = require('./data/content');
-        res.render('error', {
+        res.render('page-error', {
             message: err.message,
             error: err,
             data: data_content
@@ -80,7 +80,7 @@ else {
     app.use(function (err, req, res, next) {
         res.status(err.status || 500);
         var data_content = require('./data/content');
-        res.render('error', {
+        res.render('page-error', {
             message: err.message,
             data: data_content,
             error: {}

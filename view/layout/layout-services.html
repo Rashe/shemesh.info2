@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>shemesh.info </title>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{data.meta_description}}">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+
+    {# CSS #}
+    {% set icons = true  %}
+    {% block css_include %}
+    {% include '../blocks/block-css_include.html' with icons %}
+    {% endblock %}
+
+    {# JS #}
+    {% block js_include %}
+    {% include '../blocks/block-js_include.html' %}
+    {% endblock %}
+</head>
+<body class="{{css}}">
+<header>
+
+</header>
+
+<aside id="aside_nav">
+    {# NAVIGATION #}
+    {% block nav %}
+    {% include '../blocks/block-nav_inside.html' with data%}
+    {% endblock %}
+</aside>
+
+
+{# CONTENT #}
+{% block content %}{% endblock %}
+
+{# TRACKING #}
+{% block track %}
+{% include '../blocks/block-tracking.html' with data%}
+{% endblock %}
+</body>
+</html>

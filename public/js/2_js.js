@@ -18,6 +18,7 @@
                 login: '#login',
                 clopener: '.clopener',
                 nav_inside: '#inside',
+                aside_nav: '#aside_nav',
                 services: '#services',
                 turn_reg_but: '.turn_reg button'
 
@@ -113,7 +114,7 @@
             clopener: function () {
                 var _selectors = _that.settings.selectors,
                     _classes = _that.settings.classes,
-                    nav = $(_selectors.nav_inside),
+                    nav = $(_selectors.aside_nav),
                     clopener = $(_selectors.clopener),
                     hidden = _classes.hidden,
                     clops = _classes.clops,

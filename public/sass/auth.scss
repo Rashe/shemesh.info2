@@ -3,12 +3,12 @@
 $login_color: #5C5C5C;
 
 #login, #registration {
-  width: 400px;
-  margin: 90px auto 0;
+  width: 28%;
+  margin: 5.5% auto 0;
   background: $login_color;
-  min-height: 300px;
+  min-height: 24em;
   padding-bottom: 11px;
-  box-shadow: 0px 0px 13px 13px rgba(2, 1, 1, 0.5);
+  box-shadow: 0 0 13px 13px rgba(2, 1, 1, 0.5);
   @include borderRadius(4px);
 }
 
@@ -19,9 +19,9 @@ $login_color: #5C5C5C;
 #login, #registration {
   h1 {
     text-align: center;
-    padding: 10px;
+    padding: 0.38em;
     color: #008CBA;
-    text-shadow: 1px 0px 0px #000;
+    text-shadow: 1px 0 0 #000;
   }
 
   form {
@@ -31,7 +31,7 @@ $login_color: #5C5C5C;
   .button {
     color: #008CBA;
     font-size: 17px;
-    padding: 4px 25px;
+    padding: 0.5em 0.9em;
     background-color: #383535;
     transition: background-color 300ms ease-out;
     border: 1px solid #252525;
@@ -42,9 +42,9 @@ $login_color: #5C5C5C;
     }
   }
   input {
-    width: 190px;
-    height: 12px;
-    padding: 10px;
+    width: 12em;
+    height: 0.76em;
+    padding: 0.6em;
     color: #008CBA;
     font-size: 17px;
     border: 1px solid #008CBA;
@@ -75,17 +75,17 @@ $login_color: #5C5C5C;
 }
 
 .inp_holder {
-  margin-top: 20px;
+  margin-top: 1.5em;
 }
 
 .but_holder {
-  margin-top: 20px;
+  margin-top: 1.5em;
 }
 
 .form_register, .form_login, .fp_pass {
   text-align: center;
   color: #008CBA;
-  margin-top: 35px;
+  margin-top: 2.5em;
   text-decoration: none;
   font-size: 14px;
   display: block;
@@ -97,9 +97,19 @@ $login_color: #5C5C5C;
 }
 
 .fp_pass {
-  margin-top: 7px;
+  margin-top: 0.5em;
 }
 
 .for_bots {
   display: none;
+}
+
+#fpass{
+  width: 18%;
+  margin: 7% auto 0;
+  text-align: center;
+
+  img{
+    width: 100%;
+  }
 }
