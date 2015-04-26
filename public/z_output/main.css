@@ -525,13 +525,13 @@ footer {
   text-align: center; }
   .search_form input {
     color: #fff;
-    width: 45%;
+    width: 23em;
     height: 2em;
     background-color: #474747;
     border: 1px solid #777;
     padding-left: 5px; }
   .search_form button {
-    width: 10%;
+    width: 5em;
     height: 2.3em;
     background-color: #474747;
     border: 1px solid #777;
@@ -584,7 +584,7 @@ footer {
   .search_form {
     width: inherit;
     margin: -18% auto 0; } }
-@media screen and (max-width: 700px) and (orientation: portrait) {
+@media screen and (max-width: 900px) and (orientation: portrait) {
   .search_form {
     width: inherit;
     margin: -18% auto 0; }
@@ -733,6 +733,12 @@ hr {
   #fpass img {
     width: 100%; }
 
+@media screen and (max-width: 900px) {
+  #login, #registration {
+    width: 60%; } }
+@media screen and (max-width: 480px) {
+  #login, #registration {
+    width: 95%; } }
 body.services, body.blog_admin, body.blog_make_post {
   background: #f9f6f1;
   width: 100%; }
@@ -1026,7 +1032,6 @@ body.blog {
 
 .post_wra {
   width: 100%;
-  margin-top: 40;
   margin-bottom: 25px; }
 
 #blogeg_article .post_wra {
@@ -1098,5 +1103,45 @@ body.blog {
 
 .more_link {
   text-decoration: none; }
+
+@media screen and (max-width: 1200px) {
+  #blogeg, #blogeg_article {
+    width: 76%;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease; }
+    #blogeg.clopener_ser, #blogeg_article.clopener_ser {
+      width: 96%;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+      margin-left: 1%; } }
+@media screen and (max-width: 900px) {
+  .blog .heading_row h1 {
+    text-align: center; }
+  .blog #inside.hidden {
+    width: 0; }
+  .blog #aside_nav {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 2% 0 0; }
+    .blog #aside_nav.hidden {
+      width: 0; }
+    .blog #aside_nav li {
+      display: inline; }
+    .blog #aside_nav .clopener {
+      display: none; }
+      .blog #aside_nav .clopener.clopener_pos {
+        left: 0; }
+    .blog #aside_nav a {
+      font-size: 1.3em;
+      font-family: "Courier New", Courier, monospace; }
+
+  #blogeg, #blogeg_article {
+    width: 98%;
+    margin: 2% 1%; } }
 
 /*# sourceMappingURL=main.css.map */

@@ -58,7 +58,7 @@ body.blog {
 
 .post_wra {
   width: 100%;
-  margin-top: 40;
+//  margin-top: 40px;
   margin-bottom: 25px;
 }
 
@@ -164,3 +164,85 @@ body.blog {
 .more_link {
   text-decoration: none;
 }
+
+@media screen and (max-width: 1200px) {
+
+  #blogeg, #blogeg_article{
+    width: 76%;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+
+    &.clopener_ser{
+      width: 96%;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+      margin-left: 1%;
+    }
+  }
+
+
+
+}
+
+@media screen and (max-width: 900px) {
+
+  .blog {
+
+    .heading_row{
+
+      h1{
+        text-align: center;
+      }
+    }
+
+    #inside {
+
+      &.hidden {
+        width: 0;
+      }
+    }
+
+    #aside_nav {
+      display: block;
+      width: 100%;
+      text-align: center;
+      margin: 2% 0 0;
+
+      &.hidden {
+        width: 0;
+      }
+
+      li{
+        display: inline;
+      }
+
+      .clopener {
+        display: none;
+
+        &.clopener_pos {
+          left: 0;
+        }
+      }
+      a {
+        font-size: 1.3em;
+        font-family: $font_family;
+      }
+
+    }
+  }
+
+  #blogeg, #blogeg_article{
+    width: 98%;
+    margin: 2% 1%;
+  }
+
+
+
+}
+
+
+
