@@ -804,7 +804,8 @@ hr {
   #aside_nav .clopener {
     color: #008CBA;
     position: absolute;
-    left: 152px;
+    left: 100%;
+    top: -7%;
     font-size: 20px;
     z-index: 29;
     cursor: pointer;
@@ -833,7 +834,8 @@ hr {
   top: -20px; }
 
 #services {
-  margin-left: 15%;
+  display: inline-block;
+  vertical-align: top;
   width: auto;
   padding: 31px;
   -webkit-transition: all 0.5s ease;
@@ -988,7 +990,7 @@ hr {
 div.post_pref {
   position: absolute;
   top: 1px;
-  left: 44%;
+  right: 0;
   margin: 0; }
   div.post_pref label {
     display: inline-block;

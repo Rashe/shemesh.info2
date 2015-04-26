@@ -13,6 +13,9 @@
             </div>
             <div>
                 <textarea placeholder="Post Body" name="post_body" rows="30" cols="50" required></textarea>
+                <script>
+                    CKEDITOR.replace('post_body');
+                </script>
             </div>
             <div class="post_pref">
                 <label for="checkbox_publish">Publish?</label>
