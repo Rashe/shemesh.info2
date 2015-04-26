@@ -1,7 +1,7 @@
 $about_color: #008CBA;
 
 body.about {
-//  background: #f9f6f1;
+  //  background: #f9f6f1;
 }
 
 hr {
@@ -14,7 +14,7 @@ hr {
 
 .about {
   color: #000;
-//  margin-left: 20px;
+  //  margin-left: 20px;
   h1, p {
     color: #000;
     margin-left: 20px;
@@ -31,5 +31,16 @@ hr {
 }
 
 #about {
-  margin: 10% 0 0 25%;
+  margin: 10% 0 0 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 900px) {
+  #about {
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
 }
