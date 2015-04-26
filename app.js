@@ -27,7 +27,7 @@ else {
 //swing end
 
 //Todo uncomment when favicon will be
-//app.use(favicon(__dirname + '/public/images/favicon.ico'));
+app.use(favicon(__dirname + '/public/img/favicon.ico'));
 
 app.use(bodyParser());
 app.use(bodyParser.json());

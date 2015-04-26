@@ -14,7 +14,10 @@
             <div>
                 <textarea placeholder="Post Body" name="post_body" rows="30" cols="50" required></textarea>
                 <script>
-                    CKEDITOR.replace('post_body');
+                    var editor = CKEDITOR.replace('post_body');
+                    editor.on( 'change', function( evt ) {
+                        $('textarea').val(evt.editor.getData());
+                    });
                 </script>
             </div>
             <div class="post_pref">
