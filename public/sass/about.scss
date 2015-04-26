@@ -28,6 +28,40 @@ hr {
   .nav_text {
     color: #000;
   }
+
+  .form_send {
+    margin: 5em 0;
+
+    .form_wraper {
+      margin: 2em 0;
+    }
+
+    input, textarea {
+      color: #fff;
+      width: 23em;
+      height: 2em;
+      background-color: #474747;
+      border: 1px solid #777;
+      padding-left: 5px;
+    }
+
+    textarea {
+      height: 10em;
+    }
+
+    button {
+      width: 5em;
+      height: 2.3em;
+      background-color: #474747;
+      border: 1px solid #777;
+      color: #fff;
+
+      &:hover, &:active {
+        background-color: #777;
+        color: #fff;
+      }
+    }
+  }
 }
 
 #about {

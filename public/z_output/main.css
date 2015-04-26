@@ -620,6 +620,28 @@ hr {
     font-size: 2em; }
   .about .nav_text {
     color: #000; }
+  .about .form_send {
+    margin: 5em 0; }
+    .about .form_send .form_wraper {
+      margin: 2em 0; }
+    .about .form_send input, .about .form_send textarea {
+      color: #fff;
+      width: 23em;
+      height: 2em;
+      background-color: #474747;
+      border: 1px solid #777;
+      padding-left: 5px; }
+    .about .form_send textarea {
+      height: 10em; }
+    .about .form_send button {
+      width: 5em;
+      height: 2.3em;
+      background-color: #474747;
+      border: 1px solid #777;
+      color: #fff; }
+      .about .form_send button:hover, .about .form_send button:active {
+        background-color: #777;
+        color: #fff; }
 
 #about {
   margin: 10% 0 0 0;
