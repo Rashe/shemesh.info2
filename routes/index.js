@@ -117,4 +117,8 @@ router.post('/post_edit', function (req, res) {
     }
 });
 
+router.post('/send_me_mail', function (req, res) {
+    require('../controller/c-email_send').post(req, res);
+});
+
 module.exports = router;
