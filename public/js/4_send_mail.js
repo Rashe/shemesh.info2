@@ -1,25 +1,25 @@
 (function () {
-    var auth = function () {
+    var send_mail = function () {
         var _that = this;
         this.settings = {
             degug: true,
             selectors: {
-                login: '#login',
+                form: '.some_form_haha',
                 error_id: '#error_disp',
                 for_bots: '#for_bots',
-                regi_button: '.but_holder button'
+                success: '.success_message'
             },
             classes: {}
         };
 
         this.init = function (settings) {
             var _selectors = _that.settings.selectors;
-            this.main.auth_sendForm();
+            this.main.send_mail_sendForm();
             this.main.hidden_input();
         };
 
         this.main = {
-            auth_sendForm: function (form_name, post, href) {
+            send_mail_sendForm: function (form_name, post, href) {
                 $(document.forms[form_name]).on('submit', function () {
                     var input_check = _that.main.hidden_input();
                     if(input_check == false){
@@ -35,14 +35,9 @@
                         },
                         statusCode: {
                             200: function () {
-                                window.location.href = href;
+                                _that.main.success();
                             },
-                            403: function (jqXHR) {
-                                //var error = JSON.parse(jqXHR.responseText);
-                                var error = jqXHR.responseText;
-                                _that.main.error_disp(error);
-                                //$('.error', form).html(error.message);
-                            }
+                            403: function (jqXHR) {}
                         }
                     });
                     return false;
@@ -61,21 +56,21 @@
                 if(_for_bots.val() != ''){
                     return false;
                 }
+            },
+            success: function(){
+                var _selectors = _that.settings.selectors;
+                $(_selectors.form).hide();
+                $(_selectors.success).show();
             }
         }
     };
-    window.auth = new auth();
+    window.send_mail = new send_mail();
 }());
 
 
 $(document).ready(function () {
-    auth.init({debug: true});
-
-    if ($('#login').length > 0) {
-        auth.main.auth_sendForm('login_form', '/login', '/services');
+    send_mail.init({debug: true});
+    if ($('#about').length > 0) {
+        send_mail.main.send_mail_sendForm('form_send_ek', '/send_me_mail', '/about');
     }
-    if ($('#registration').length > 0) {
-        auth.main.auth_sendForm('registration_form', '/registration', '/services');
-    }
-
 });

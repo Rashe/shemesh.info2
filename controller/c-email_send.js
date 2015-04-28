@@ -3,21 +3,12 @@ var nodemailer = require("nodemailer");
 exports.post = function (req, res) {
 
     var qRes = res,
-        user = req.session.user,
-        title = req.body.title,
-        post_link = req.body.post_link,
-        post_body = req.body.post_body,
-        post_publish = req.body.publish;
+        email = req.body.email,
+        text = req.body.text,
+        subject = 'From shemesh.info about',
+        reciever = '@gmail.com';
 
-    if (post_link == '') {
-        var arr = title.toLowerCase().split(" ");
-        post_link = arr.join('_');
-    }
-
-    var blog_data = [user, title, post_link, post_body, post_publish];
-
-
-    var smtpTransport = nodemailer.createTransport("SMTP",{
+    var transporter = nodemailer.createTransport({
         service: "Gmail",
         auth: {
             user: "@gmail.com",
@@ -25,20 +16,20 @@ exports.post = function (req, res) {
         }
     });
 
-
-    var mailOptions={
-        to : req.query.to,
-        subject : req.query.subject,
-        text : req.query.text
+    var mailOptions = {
+        from: email, // sender address
+        to: reciever, // list of receivers
+        subject: subject, // Subject line
+        text: text
     };
-    console.log(mailOptions);
-    smtpTransport.sendMail(mailOptions, function(error, response){
+
+
+
+    transporter.sendMail(mailOptions, function(error, info){
         if(error){
-            console.log(error);
-            res.end("error");
+
         }else{
-            console.log("Message sent: " + response.message);
-            res.end("sent");
+
         }
     });
 

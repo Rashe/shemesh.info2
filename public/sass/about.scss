@@ -32,6 +32,11 @@ hr {
   .form_send {
     margin: 5em 0;
 
+    .success_message{
+      display: none;
+      padding-bottom: 10em;
+    }
+
     .form_wraper {
       margin: 2em 0;
     }
