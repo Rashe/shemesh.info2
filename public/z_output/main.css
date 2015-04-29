@@ -622,6 +622,9 @@ hr {
     color: #000; }
   .about .form_send {
     margin: 5em 0; }
+    .about .form_send .success_message {
+      display: none;
+      padding-bottom: 10em; }
     .about .form_send .form_wraper {
       margin: 2em 0; }
     .about .form_send input, .about .form_send textarea {
