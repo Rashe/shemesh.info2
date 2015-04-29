@@ -8,6 +8,7 @@ exports.post = function (req, res) {
         subject = 'From shemesh.info about',
         reciever = '@gmail.com';
 
+    //TODO
     var transporter = nodemailer.createTransport({
         service: "Gmail",
         auth: {
