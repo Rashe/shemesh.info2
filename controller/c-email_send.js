@@ -1,4 +1,5 @@
 var nodemailer = require("nodemailer");
+var config = require('../config/config');
 
 exports.post = function (req, res) {
 
@@ -6,14 +7,14 @@ exports.post = function (req, res) {
         email = req.body.email,
         text = req.body.text,
         subject = 'From shemesh.info about',
-        reciever = '@gmail.com';
+        reciever = config.email_reciever;
 
     //TODO
     var transporter = nodemailer.createTransport({
         service: "Gmail",
         auth: {
-            user: "@gmail.com",
-            pass: ""
+            user: config.email_auth_user,
+            pass: config.email_auth_pass
         }
     });
 

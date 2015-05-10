@@ -25,6 +25,9 @@ var schema = mongoose.Schema({
 schema.statics.showAllPosts = function (callback) {
     var Blog = this;
     Blog.find({post_published: true}).sort({post_dateCreate: 'desc'}).exec(function (err, posts) {
+        if(err){
+            //error handler
+        }
         callback(posts);
     });
 };
@@ -32,7 +35,11 @@ schema.statics.showAllPosts = function (callback) {
 schema.statics.showAllPostsAdmin = function (callback) {
     var Blog = this;
     Blog.find({}, function (err, posts) {
-        if (posts.length != 0) {
+        if(err){
+            //error
+        }
+        
+        if (posts.length) {
             callback(posts);
         } else {
             var def_data = {
@@ -46,7 +53,10 @@ schema.statics.showAllPostsAdmin = function (callback) {
 schema.statics.countPostsAdmin = function (callback) {
     var Blog = this;
     Blog.count({}, function (err, posts) {
-        if (posts != null) {
+        if(err){
+            //error
+        }
+        if (posts) {
             callback(posts);
         } else {
             var def_data_count = {
@@ -59,16 +69,17 @@ schema.statics.countPostsAdmin = function (callback) {
 
 schema.statics.create_post = function (post_data, callback) {
     var Blog = this, publish;
-    if (post_data[4] == null) {
-        publish = false;
-    } else {
+    
+    if (post_data.post_publish) {
         publish = true;
+    } else {
+        publish = false;
     }
     var create_post = new Blog({
-        post_user: post_data[0],
-        post_title: post_data[1],
-        post_link: post_data[2],
-        post_body: post_data[3],
+        post_user: post_data.user,
+        post_title: post_data.title,
+        post_link: post_data.post_link,
+        post_body: post_data.post_body,
         post_published: publish
     });
 
@@ -81,7 +92,10 @@ schema.statics.create_post = function (post_data, callback) {
 schema.statics.showPost = function (post_link, callback) {
     var Blog = this;
     Blog.findOne({post_link: post_link}, function (err, post) {
-        if (post != null) {
+        if(err){
+            //err
+        }
+        if (post) {
             callback(post);
         } else {
             callback(false);
@@ -92,31 +106,41 @@ schema.statics.showPost = function (post_link, callback) {
 schema.statics.showPostEdit = function (post_link, callback) {
     var Blog = this;
     Blog.findOne({post_link: post_link}, function (err, post) {
-        if (post != null) {
+        if(err){
+            //err
+        }
+        if (post) {
             callback(post);
-        } else {
+        } 
+        else {
             callback(false);
         }
     });
 };
 
 schema.statics.postEdit = function (blog_data, callback) {
+     //var blog_data = [user, title, post_link, post_body, post_publish, post_id];
     var Blog = this, publish;
-    Blog.findOne({_id: blog_data[5]}, function (err, post) {
-        if (post != null) {
-            post.post_user = blog_data[0];
-            post.post_title = blog_data[1];
-            post.post_link = blog_data[2];
-            post.post_body = blog_data[3];
-            if (blog_data[4] == null) {
-                publish = false;
-            } else {
+    Blog.findOne({_id: blog_data.post_id}, function (err, post) {
+        if(err){
+            //error
+        }
+        if (post) {
+            post.post_user = blog_data.user;
+            post.post_title = blog_data.title;
+            post.post_link = blog_data.post_link;
+            post.post_body = blog_data.post_body;
+            if (blog_data.post_publish) {
                 publish = true;
+            } 
+            else {
+                publish = false;
             }
             post.post_published = publish;
             post.save();
             callback(true);
-        } else {
+        } 
+        else {
             callback(false);
         }
     });

@@ -1,7 +1,6 @@
 var User = require('../model/m-user').User;
 var Setti = require('../model/m-settings').Setti;
 var async = require('async');
-var errors = require('../data/errors');
 var data_content = require('../data/content');
 
 exports.get = function (req, res) {
@@ -24,6 +23,9 @@ exports.get = function (req, res) {
             });
         }
     }, function (err, results) {
+        if(err){
+            //err
+        }
         res.render('page-services', {data: data_content, css: 'services', users_data: results});
     });
 };

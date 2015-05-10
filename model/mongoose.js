@@ -1,6 +1,8 @@
 var mongoose = require('mongoose');
+var config = require('../config/config');
+
 //var uriUtil = require('mongodb-uri');
-//var mongodbUri = 'mongodb://ra:12@ds035290.mongolab.com:35290/shemesh';
+//var mongodbUri = 'mongodb://'+ config.mongo_user:config.mongo_pass + '@ds035290.mongolab.com:35290/shemesh';
 //var mongooseUri = uriUtil.formatMongoose(mongodbUri);
 //
 //

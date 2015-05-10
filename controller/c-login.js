@@ -10,22 +10,13 @@ exports.post = function (req, res, next) {
         res.end(errors.fuck_you);
     }
     var qRes = res,
-        user = req.body.username,
-        pass = req.body.password,
-        hashedPass = Encript(user, pass);
+        data = {};
+        data.user = req.body.username;
+        data.pass = req.body.password;
+        data.hashedPass = Encript(data.user, data.pass);
 
-
-    if (user == '' || user == null || user == false) {
-        res.writeHead(403, {"Content-Type": "text/plain"});
-        res.end(errors.fuck_you);
-
-    } else if (pass == '' || pass == null) {
-
-        res.writeHead(403, {"Content-Type": "text/plain"});
-        res.end(errors.fuck_you);
-    } else {
-        var login_data = [user, hashedPass];
-        User.authorize(login_data, function (user_c) {
+    if (data.user || data.pass) {
+        User.authorize(data, function (user_c) {
             if (user_c == 1) {
                 res.writeHead(403, {"Content-Type": "text/plain"});
                 res.end(errors.no_suchUser);
@@ -34,9 +25,13 @@ exports.post = function (req, res, next) {
                 res.writeHead(403, {"Content-Type": "text/plain"});
                 res.end(errors.wrong_pass);
             } else {
-                req.session.user = user;
+                req.session.user = data.user;
                 qRes.send({});
             }
         });
+        
+    } else {
+         res.writeHead(403, {"Content-Type": "text/plain"});
+        res.end(errors.fuck_you);
     }
 };

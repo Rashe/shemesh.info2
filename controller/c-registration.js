@@ -12,7 +12,6 @@ exports.post = function (req, res) {
             return;
         }
         else {
-
             if ((Valida(req.body.username, 'str_num')) || (Valida(req.body.email, 'email'))) {
                 res.writeHead(403, {"Content-Type": "text/plain"});
                 res.end(errors.fuck_you);
@@ -23,13 +22,13 @@ exports.post = function (req, res) {
             data.user = req.body.username;
             data.email = req.body.email;
             data.pass = req.body.password;
-            data.hashedPass = Encript(user, pass);
+            data.hashedPass = Encript(data.user, data.pass);
             data.ghh = req.body.ghhh;
 
             if (data.user || data.pass || data.ghh == '' || data.email) {
                 User.register(data, function (call) {
                     if (call) {
-                        req.session.user = user;
+                        req.session.user = data.user;
                         qRes.send({});
                     } else {
                         res.writeHead(403, {"Content-Type": "text/plain"});

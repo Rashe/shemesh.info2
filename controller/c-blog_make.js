@@ -1,25 +1,21 @@
 var Blog = require('../model/m-blog').Blog;
-var async = require('async');
-var errors = require('../data/errors');
-var data_content = require('../data/content');
 
 exports.post = function (req, res) {
 
     var qRes = res,
-        user = req.session.user,
-        title = req.body.title,
-        post_link = req.body.post_link,
-        post_body = req.body.post_body,
-        post_publish = req.body.publish;
+        data = {};
+        data.user = req.session.user;
+        data.title = req.body.title;
+        data.post_link = req.body.post_link;
+        data.post_body = req.body.post_body;
+        data.post_publish = req.body.publish;
 
-    if (post_link == '') {
-        var arr = title.toLowerCase().split(" ");
-        post_link = arr.join('_');
+    if (data.post_link == '') {
+        var arr = data.title.toLowerCase().split(" ");
+        data.post_link = arr.join('_');
     }
-
-    var blog_data = [user, title, post_link, post_body, post_publish];
-
-    Blog.create_post(blog_data, function (call) {
+    
+    Blog.create_post(data, function (call) {
         qRes.send({});
     });
 };

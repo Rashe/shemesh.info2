@@ -4,9 +4,7 @@ var path = require('path');
 var favicon = require('static-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var mongoose = require('./model/mongoose');
-var sass = require('node-sass');
-var nodemailer = require("nodemailer");
+var config = require('/config/config');
 var routes = require('./routes/index');
 
 var app = express();
@@ -40,7 +38,7 @@ app.use(session({
         httpOnly: true,
         maxAge: 24 * 60 * 60 * 1000
     },
-    secret: 'vodka_huj_seledka'
+    secret: config.app_secret
 }));
 
 

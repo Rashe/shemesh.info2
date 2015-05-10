@@ -30,6 +30,10 @@ var schema = mongoose.Schema({
 schema.statics.showAllUsers = function (callback) {
     var User = this;
     User.find({}, function (err, users) {
+        if(err){
+            //err
+        }
+        
         callback(users);
     });
 };
@@ -37,20 +41,28 @@ schema.statics.showAllUsers = function (callback) {
 schema.statics.lastInfos = function (username, callback) {
     var User = this;
     User.findOne({username: username}, function (err, userDb, next) {
-        if (userDb.lastLogin == null) {
-            callback(userDb.dateCreate);
-        } else {
+        if(err){
+            //err
+        }
+        
+        if (userDb.lastLogin) {
             callback(userDb.lastLogin);
+        } else {
+            callback(userDb.dateCreate);
         }
     });
 };
 
 schema.statics.authorize = function (login_data, callback) {
     var User = this;
-    User.findOne({username: login_data[0]}, function (err, userDb, next) {
+    User.findOne({username: login_data.user}, function (err, userDb, next) {
+        if(err){
+            //err
+        }
+        
         if (userDb == null) {
             callback(1);
-        } else if (userDb.password != login_data[1]) {
+        } else if (userDb.password != login_data.hashedPass) {
             callback(2);
         }
         else {
@@ -64,7 +76,11 @@ schema.statics.authorize = function (login_data, callback) {
 schema.statics.register = function (data, callback) {
     var User = this;
     User.findOne({username: data.user}, function (err, userDb) {
-        if (userDb != null) {
+        if(err){
+            //err
+        }
+        
+        if (userDb) {
             callback(false);
         }
         else {

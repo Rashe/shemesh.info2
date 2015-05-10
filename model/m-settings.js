@@ -13,8 +13,15 @@ var schema = mongoose.Schema({
 schema.statics.regEnableCheck = function (callback) {
     var Setti = this;
     Setti.findOne({}, function (err, sett) {
-        if (sett == null ) {
-            var first_setting = new Setti({
+        if(err){
+            //err
+        }
+        
+        if (sett) {
+            callback(sett);
+        } 
+        else {
+        var first_setting = new Setti({
                 registration: true,
                 whoChanged: 'Not been changed'
             });
@@ -25,8 +32,6 @@ schema.statics.regEnableCheck = function (callback) {
                 registration: true, whoChanged: 'Not been changed'
             };
             callback(def_data);
-        } else {
-            callback(sett);
         }
     });
 };
@@ -34,18 +39,23 @@ schema.statics.regEnableCheck = function (callback) {
 schema.statics.regEnableChange = function (rdata) {
     var Setti = this;
     Setti.findOne({}, function (err, sett) {
-        if(sett != null){
-            if (sett.registration == false) {
-                sett.registration = true;
-                sett.whoChanged = rdata;
-                sett.save();
-            }
-            else {
+        if(err){
+            //err
+        }
+        
+        if(sett){
+            if (sett.registration) {
                 sett.registration = false;
                 sett.whoChanged = rdata;
                 sett.save();
             }
-        }else{
+            else {
+                sett.registration = true;
+                sett.whoChanged = rdata;
+                sett.save();
+            }
+        }
+        else{
             var createSett = new Setti({
                 whoChanged: rdata
             });
