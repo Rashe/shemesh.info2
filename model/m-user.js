@@ -61,17 +61,17 @@ schema.statics.authorize = function (login_data, callback) {
     });
 };
 
-schema.statics.register = function (regis_data, callback) {
+schema.statics.register = function (data, callback) {
     var User = this;
-    User.findOne({username: regis_data[0]}, function (err, userDb, next) {
+    User.findOne({username: data.user}, function (err, userDb) {
         if (userDb != null) {
             callback(false);
         }
         else {
             var createUser = new User({
-                username: regis_data[0],
-                email: regis_data[1],
-                password: regis_data[2]
+                username: data.user,
+                email: data.email,
+                password: data.hashedPass
             });
 
             createUser.save(function (err) {
