@@ -12,9 +12,10 @@ exports.post = function (req, res) {
             return;
         }
         else {
-            if ((Valida(req.body.username, 'str_num')) || (Valida(req.body.email, 'email'))) {
+            if ((Valida(req.body.username, 'str_num') == false) || (Valida(req.body.email, 'email') == false)) {
                 res.writeHead(403, {"Content-Type": "text/plain"});
                 res.end(errors.fuck_you);
+                return;
             }
 
             var qRes = res,

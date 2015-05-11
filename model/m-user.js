@@ -93,7 +93,7 @@ schema.statics.register = function (data, callback) {
             createUser.save(function (err) {
                 if (err) throw  err;
             });
-            callback();
+            callback(true);
         }
     });
 };

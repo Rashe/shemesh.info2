@@ -4,7 +4,7 @@ var path = require('path');
 var favicon = require('static-favicon');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var config = require('/config/config');
+var config = require('./config/config');
 var routes = require('./routes/index');
 
 var app = express();

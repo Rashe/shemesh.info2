@@ -5,5 +5,5 @@
     "email_auth_pass": "",
     "crypto": "sha256",
     "mongo_user": "ra",
-    "mongo_pass": "12",
+    "mongo_pass": "12"
 }
