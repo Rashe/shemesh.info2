@@ -15,7 +15,7 @@ exports.post = function (req, res, next) {
         data.pass = req.body.password;
         data.hashedPass = Encript(data.user, data.pass);
 
-    if (data.user || data.pass) {
+    if (data.user && data.pass) {
         User.authorize(data, function (user_c) {
             if (user_c == 1) {
                 res.writeHead(403, {"Content-Type": "text/plain"});

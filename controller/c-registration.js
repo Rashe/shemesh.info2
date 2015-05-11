@@ -26,7 +26,7 @@ exports.post = function (req, res) {
             data.hashedPass = Encript(data.user, data.pass);
             data.ghh = req.body.ghhh;
 
-            if (data.user || data.pass || data.ghh == '' || data.email) {
+            if (data.user && data.pass && data.ghh == '' && data.email) {
                 User.register(data, function (call) {
                     if (call) {
                         req.session.user = data.user;
