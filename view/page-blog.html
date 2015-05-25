@@ -13,9 +13,10 @@
         <h2><a href="/blog/post/{{item.post_link}}" class="article_link">{{item.post_title}}</a></h2>
 
         <div class="thePost">
-            {% set pbd = item.post_body | substr  %}
-            {{ pbd | safe }}
-            <span class="dotes">... </span><a href="/blog/post/{{item.post_link}}" class="more_link">»</a>
+            {#{% set pbd = item.post_body | substr  %}#}
+            {{ item.post_teaser | safe  }}
+            {#<span class="dotes">... </span>#}
+            <a href="/blog/post/{{item.post_link}}" class="more_link">Read More</a>
         </div>
         <div class="credit">
             <p><span class="us_n">{{item.post_user}}</span>, <time>{{item.post_dateCreate |date('jS \o\f F')}}</time></p>

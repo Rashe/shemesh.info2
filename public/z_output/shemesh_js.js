@@ -67,7 +67,6 @@ jQuery.easing['jswing'] = jQuery.easing['swing']; jQuery.extend(jQuery.easing, {
                             if ($this.val() === '')
                                 $this.val(attrPh).css('color', '#fff');
                         });
-
                 }
             },
             search_shit: function () {
@@ -165,7 +164,8 @@ jQuery.easing['jswing'] = jQuery.easing['swing']; jQuery.extend(jQuery.easing, {
                     cur_text = _turn_reg_but.text();
                 if (cur_text == s_text) {
                     cur_text = s_text2;
-                } else {
+                } 
+                else {
                     cur_text = s_text;
                 }
                 _turn_reg_but.text(cur_text);

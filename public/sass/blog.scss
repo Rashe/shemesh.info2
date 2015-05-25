@@ -36,11 +36,24 @@ body.blog {
     }
 
   }
+
+  #blogeg {
+
+    .thePost {
+
+      img {
+        height: initial !important;
+        width: 40% !important;
+        float: left;
+        padding: 0 0.5em 0.5em 0;
+      }
+    }
+  }
 }
 
 #blogeg, #blogeg_article {
   width: 60%;
-//  margin: 0 0 0 9%;
+  //  margin: 0 0 0 9%;
   display: inline-block;
   vertical-align: top;
 }
@@ -58,8 +71,11 @@ body.blog {
 
 .post_wra {
   width: 100%;
-//  margin-top: 40px;
   margin-bottom: 25px;
+
+  .backtoBlog {
+    cursor: pointer;
+  }
 }
 
 #blogeg_article {
@@ -120,10 +136,27 @@ body.blog {
   margin: 1em 0;
   p {
     color: #3A4145;
-    margin: 1em 0;
-    font-size: inherit;
+    margin: 1em 0 0;
+    font-size: 1em;
     line-height: inherit;
-    display: inline;
+    font-family: initial;
+
+    img {
+      text-align: center;
+      display: block;
+      margin: 0 auto;
+      height: initial !important;
+      max-width: 100%;
+    }
+
+    iframe {
+      margin: 0 auto 1em;
+      display: block;
+    }
+  }
+
+  hr {
+    display: none;
   }
 
   a {
@@ -149,7 +182,6 @@ body.blog {
   font-size: 1.2em;
   text-decoration: underline;
   position: relative;
-  //  top: -21px;
 }
 
 .readMore:hover, .comments:hover {
@@ -163,18 +195,19 @@ body.blog {
 
 .more_link {
   text-decoration: none;
+  font-size: 0.8em;
 }
 
 @media screen and (max-width: 1200px) {
 
-  #blogeg, #blogeg_article{
+  #blogeg, #blogeg_article {
     width: 76%;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 
-    &.clopener_ser{
+    &.clopener_ser {
       width: 96%;
       -webkit-transition: all 0.5s ease;
       -moz-transition: all 0.5s ease;
@@ -184,17 +217,15 @@ body.blog {
     }
   }
 
-
-
 }
 
 @media screen and (max-width: 900px) {
 
   .blog {
 
-    .heading_row{
+    .heading_row {
 
-      h1{
+      h1 {
         text-align: center;
       }
     }
@@ -216,7 +247,7 @@ body.blog {
         width: 0;
       }
 
-      li{
+      li {
         display: inline;
       }
 
@@ -235,14 +266,30 @@ body.blog {
     }
   }
 
-  #blogeg, #blogeg_article{
+  #blogeg, #blogeg_article {
     width: 98%;
     margin: 2% 1%;
   }
 
-
-
 }
 
+@media screen and (max-width: 600px) {
 
+  .blog {
+
+    #blogeg {
+
+      .thePost {
+        iframe {
+          width: 100% !important;
+        }
+
+        img {
+          width: 100% !important;
+          float: inherit;
+        }
+      }
+    }
+  }
+}
 

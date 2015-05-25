@@ -19,6 +19,7 @@
                 <script>
                     var editor = CKEDITOR.replace('post_body');
                     editor.on( 'change', function( evt ) {
+                        console.log('evt.editor.getData() ', evt.editor.getData());
                         $('textarea').val(evt.editor.getData());
                     });
                 </script>
