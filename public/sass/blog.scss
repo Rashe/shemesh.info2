@@ -53,9 +53,9 @@ body.blog {
 
 #blogeg, #blogeg_article {
   width: 60%;
-  //  margin: 0 0 0 9%;
   display: inline-block;
   vertical-align: top;
+  margin-bottom: 3em;
 }
 
 .heading_row {
@@ -72,6 +72,7 @@ body.blog {
 .post_wra {
   width: 100%;
   margin-bottom: 25px;
+  border-bottom: 1px solid #DDDDDD;
 
   .backtoBlog {
     cursor: pointer;
@@ -108,7 +109,7 @@ body.blog {
 .credit {
 
   p {
-    color: #999;
+    color: #6f6f6f;
     font-size: 1em;
     display: block;
     margin-top: 0.4em;
@@ -134,6 +135,8 @@ body.blog {
   font-size: 1.65em;
   color: #3A4145;
   margin: 1em 0;
+  position: relative;
+
   p {
     color: #3A4145;
     margin: 1em 0 0;
@@ -196,6 +199,9 @@ body.blog {
 .more_link {
   text-decoration: none;
   font-size: 0.8em;
+  position: absolute;
+  right: 0.5em;
+  bottom: -2.5em;
 }
 
 @media screen and (max-width: 1200px) {
@@ -277,8 +283,6 @@ body.blog {
 
   .blog {
 
-    #blogeg {
-
       .thePost {
         iframe {
           width: 100% !important;
@@ -289,7 +293,6 @@ body.blog {
           float: inherit;
         }
       }
-    }
   }
 }
 
