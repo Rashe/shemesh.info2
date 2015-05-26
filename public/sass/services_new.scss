@@ -1,0 +1,40 @@
+#services {
+  margin-bottom: 20px;
+}
+
+.services {
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+
+  .widget {
+    margin: 5em auto;
+
+    .widget_heading {
+
+      .fa, h3 {
+        display: inline-block;
+      }
+    }
+  }
+}
+
+.make_post {
+  margin-top: 20px;
+
+  .post_pref {
+
+    label, input {
+      display: inline-block;
+    }
+  }
+}
+
+.user_info_section {
+  margin-top: 20px;
+  .user_info_formWrap {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+

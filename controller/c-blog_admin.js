@@ -15,10 +15,15 @@ exports.get = function (req, res) {
             });
         }
     }, function (err, results) {
-        if(err){
+        if (err) {
             //errors must be handle
         }
-        res.render('page-blog_admin', {data: data_content, css: 'blog_admin', blog_admin: results});
+        res.render('pages/services/page-blog_admin', {
+            user: req.session.user,
+            data: data_content,
+            css: 'blog_admin',
+            blog_admin: results
+        });
     });
 };
 

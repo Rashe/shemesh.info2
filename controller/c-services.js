@@ -23,10 +23,15 @@ exports.get = function (req, res) {
             });
         }
     }, function (err, results) {
-        if(err){
+        if (err) {
             //err
         }
-        res.render('page-services', {data: data_content, css: 'services', users_data: results});
+        res.render('pages/services/page-services', {
+            user: req.session.user,
+            data: data_content,
+            css: 'services',
+            users_data: results
+        });
     });
 };
 

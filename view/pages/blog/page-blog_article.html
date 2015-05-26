@@ -1,4 +1,4 @@
-{% extends 'layout/layout-blog.html' %}
+{% extends '../../layout/layout-blog.html' %}
 
 {% block content %}
 <section id="blogeg_article">
@@ -7,7 +7,7 @@
     </div>
     <article class="post_wra">
         <div class="credit">
-            <p>{{post_data.post_user}}, <time>{{post_data.post_dateCreate |date('jS \o\f F')}}</time></p>
+            <p>{{post_data.post_user}}, <time>{{post_data.post_dateCreate |date('jS \o\f F Y')}}</time></p>
             <!--<a href="error.html" class="comments">3 comments</a>-->
         </div>
         <div class="thePost">

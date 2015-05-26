@@ -9,7 +9,7 @@ jQuery.easing['jswing'] = jQuery.easing['swing']; jQuery.extend(jQuery.easing, {
         var _that = this;
         this.settings = {
 
-            degug: true,
+            degug: false,
             selectors: {
                 placeholder: 'input[placeholder]',
                 search_button: '.search_btn',
@@ -41,15 +41,8 @@ jQuery.easing['jswing'] = jQuery.easing['swing']; jQuery.extend(jQuery.easing, {
         };
 
         this.init = function (settings) {
-            var _selectors = _that.settings.selectors;
-            //this.main.placeholder(_selectors.placeholder);
-            //this.main.search_shit();
-            //this.main.nav_hover();
             this.main.clopener();
-            this.main.blog_sendForm();
-            //this.main.createWidget();
-            //this.main.next();
-            //this.main.prev();
+            this.main.submit_sendForm();
         };
 
         this.main = {
@@ -164,16 +157,15 @@ jQuery.easing['jswing'] = jQuery.easing['swing']; jQuery.extend(jQuery.easing, {
                     cur_text = _turn_reg_but.text();
                 if (cur_text == s_text) {
                     cur_text = s_text2;
-                } 
+                }
                 else {
                     cur_text = s_text;
                 }
                 _turn_reg_but.text(cur_text);
             },
-            blog_sendForm: function (form_name, post, href) {
+            submit_sendForm: function (form_name, post, href) {
                 $(document.forms[form_name]).on('submit', function () {
                     var form = $(this);
-                    var gfff = form.serialize();
                     $('.error', form).html('');
                     $.ajax({
                         url: post,
@@ -207,7 +199,7 @@ jQuery.easing['jswing'] = jQuery.easing['swing']; jQuery.extend(jQuery.easing, {
 
 
 $(document).ready(function () {
-    shmsh.init({debug: true});
+    shmsh.init({debug: false});
 
     $('.search_btn').on('click', function () {
         shmsh.main.search_shit()
@@ -220,10 +212,13 @@ $(document).ready(function () {
         shmsh.main.turn_reg_text();
     });
     if ($('#make_post_id').length > 0) {
-        shmsh.main.blog_sendForm('make_post', '/blog_make', '/blog_admin');
+        shmsh.main.submit_sendForm('make_post', '/blog_make', '/blog_admin');
     }
     if ($('#edit_post_id').length > 0) {
-        shmsh.main.blog_sendForm('edit_post', '/post_edit', '/blog_admin');
+        shmsh.main.submit_sendForm('edit_post', '/post_edit', '/blog_admin');
+    }
+    if ($('#edit_user_info').length > 0) {
+        shmsh.main.submit_sendForm('edit_user_info', '/user_info', '/user_info');
     }
 });
 ;(function () {

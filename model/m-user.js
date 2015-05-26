@@ -24,16 +24,22 @@ var schema = mongoose.Schema({
     },
     lastIp: {
         type: String
+    },
+    first_name: {
+        type: String
+    },
+    second_name: {
+        type: String
     }
 });
 
 schema.statics.showAllUsers = function (callback) {
     var User = this;
     User.find({}, function (err, users) {
-        if(err){
+        if (err) {
             //err
         }
-        
+
         callback(users);
     });
 };
@@ -41,10 +47,10 @@ schema.statics.showAllUsers = function (callback) {
 schema.statics.lastInfos = function (username, callback) {
     var User = this;
     User.findOne({username: username}, function (err, userDb, next) {
-        if(err){
+        if (err) {
             //err
         }
-        
+
         if (userDb.lastLogin) {
             callback(userDb.lastLogin);
         } else {
@@ -56,10 +62,10 @@ schema.statics.lastInfos = function (username, callback) {
 schema.statics.authorize = function (login_data, callback) {
     var User = this;
     User.findOne({username: login_data.user}, function (err, userDb, next) {
-        if(err){
+        if (err) {
             //err
         }
-        
+
         if (userDb == null) {
             callback(1);
         } else if (userDb.password != login_data.hashedPass) {
@@ -76,10 +82,10 @@ schema.statics.authorize = function (login_data, callback) {
 schema.statics.register = function (data, callback) {
     var User = this;
     User.findOne({username: data.user}, function (err, userDb) {
-        if(err){
+        if (err) {
             //err
         }
-        
+
         if (userDb) {
             callback(false);
         }
@@ -97,6 +103,36 @@ schema.statics.register = function (data, callback) {
         }
     });
 };
+
+schema.statics.showUserInfo = function (user, callback) {
+    var User = this;
+    User.findOne({username: user}, function (err, userDb) {
+        if (err) {
+            //err
+        } else {
+            callback(userDb)
+        }
+    });
+};
+
+schema.statics.userUpdateInfo = function (data, callback) {
+    var User = this;
+    User.findOne({username: data.user}, function (err, userDb) {
+        if (err) {
+            //err
+        }
+        if (userDb) {
+            userDb.username = data.user;
+            userDb.first_name = data.first_name;
+            userDb.second_name = data.second_name;
+            userDb.save();
+            callback(true);
+        } else {
+            callback(false);
+        }
+    });
+};
+
 
 schema.pre('save', function (next) {
     this.lastLogin = new Date();

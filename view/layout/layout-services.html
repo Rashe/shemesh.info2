@@ -10,35 +10,24 @@
     {# CSS #}
     {% set icons = true  %}
     {% block css_include %}
-    {% include '../blocks/block-css_include.html' with icons %}
+    {% include '../blocks/block-css_include_services.html' with icons %}
     {% endblock %}
 
     {# JS #}
     {% block js_include %}
-    {% include '../blocks/block-js_include.html' %}
+    {% include '../blocks/block-js_include_servies.html' %}
     {% endblock %}
-    {#<script src="/js/libs/ckeditor/ckeditor.js"></script>#}
-    <script src="//cdn.ckeditor.com/4.4.7/full/ckeditor.js"></script>
 </head>
 <body class="{{css}}">
 <header>
-
-</header>
-
-<aside id="aside_nav">
     {# NAVIGATION #}
     {% block nav %}
-    {% include '../blocks/block-nav_inside.html' with data%}
+        {% include '../blocks/block-nav_inside.html' with data%}
     {% endblock %}
-</aside>
-
+</header>
 
 {# CONTENT #}
 {% block content %}{% endblock %}
 
-{# TRACKING #}
-{% block track %}
-{% include '../blocks/block-tracking.html' with data%}
-{% endblock %}
 </body>
 </html>

@@ -68,7 +68,7 @@ if (app.get('env') === 'development') {
         console.log('error from app.js', err);
         res.status(err.status || 500);
         var data_content = require('./data/content');
-        res.render('page-error', {
+        res.render('pages/page-error', {
             message: err.message,
             error: err,
             data: data_content

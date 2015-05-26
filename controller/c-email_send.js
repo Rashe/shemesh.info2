@@ -26,15 +26,13 @@ exports.post = function (req, res) {
     };
 
 
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
 
-    transporter.sendMail(mailOptions, function(error, info){
-        if(error){
-
-        }else{
+        } else {
 
         }
     });
-
 
 
 };

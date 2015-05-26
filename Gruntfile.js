@@ -13,9 +13,7 @@ module.exports = function (grunt) {
                     separator: ';'
                 },
                 src: [
-                    'public/js/*.js',
-                    //'public/js/foundation/*.js',
-                    //'public/js/local/*.js'
+                    'public/js/*.js'
                 ],
                 dest: '<%=jsDistDir%><%= pkg.name %>.js'
             }

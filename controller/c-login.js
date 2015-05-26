@@ -11,9 +11,9 @@ exports.post = function (req, res, next) {
     }
     var qRes = res,
         data = {};
-        data.user = req.body.username;
-        data.pass = req.body.password;
-        data.hashedPass = Encript(data.user, data.pass);
+    data.user = req.body.username;
+    data.pass = req.body.password;
+    data.hashedPass = Encript(data.user, data.pass);
 
     if (data.user && data.pass) {
         User.authorize(data, function (user_c) {
@@ -29,9 +29,9 @@ exports.post = function (req, res, next) {
                 qRes.send({});
             }
         });
-        
+
     } else {
-         res.writeHead(403, {"Content-Type": "text/plain"});
+        res.writeHead(403, {"Content-Type": "text/plain"});
         res.end(errors.fuck_you);
     }
 };

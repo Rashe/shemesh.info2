@@ -7,9 +7,14 @@ exports.get = function (req, res) {
     var post_url = url_parts[3];
     Blog.showPostEdit(post_url, function (callback) {
         if (callback) {
-            res.render('page-blog_edit_post', {data: data_content, css: 'blog', post_data: callback});
+            res.render('pages/services/page-blog_edit_post', {
+                user: req.session.user,
+                data: data_content,
+                css: 'blog',
+                post_data: callback
+            });
         } else {
-            res.render('page-error', {data: data_content});
+            res.render('pages/page-error', {data: data_content});
         }
     });
 };

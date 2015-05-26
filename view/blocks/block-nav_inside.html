@@ -1,18 +1,26 @@
 {% block nav_inside %}
-<p class="clopener">
-    <i class="fa fa-th"></i>
-</p>
-<nav id="inside">
-    <ul class="">
-        <li class=""><a href="/services" title="Main">Main Services</a></li>
-        <li class=""><a href="#" title="Admin">Admin</a></li>
-        <li class=""><a href="/blog_admin" title="Blog">Blog admin</a></li>
-        <li><a href="/blog_make_post">Make a post</a></li>
-        <!--<li class=""><a href="/services" title="Services">{{data.nav_services}}</a></li>-->
-        <li class=""><a href="/" title="Back to Home">Home</a></li>
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="/services">Services</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
 
-        <li class="logout"><a href="/logout">Logout</a></li>
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li class="user_name"><a href="user_info">{{user}}</a></li>
+                <li><a href="/logout">LogOut</a></li>
+            </ul>
 
-    </ul>
-</nav>
+            <!-- Left Nav Section -->
+            <ul class="left">
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/blog_admin">Blog admin</a></li>
+                <li><a href="/blog_make_post">Blog, create post</a></li>
+            </ul>
+        </section>
+    </nav>
 {% endblock %}
