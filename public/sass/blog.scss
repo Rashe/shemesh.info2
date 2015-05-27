@@ -170,6 +170,18 @@ body.blog {
       text-decoration: underline;
     }
   }
+
+  .more_link {
+    text-decoration: none;
+    font-size: 0.8em;
+    position: absolute;
+    right: 0.5em;
+    bottom: -2.5em;
+    &:hover{
+      text-shadow: none;
+    }
+  }
+
 }
 
 #blogeg_article {
@@ -194,14 +206,6 @@ body.blog {
 
 #sharing {
   margin: 2em 0;
-}
-
-.more_link {
-  text-decoration: none;
-  font-size: 0.8em;
-  position: absolute;
-  right: 0.5em;
-  bottom: -2.5em;
 }
 
 @media screen and (max-width: 1200px) {

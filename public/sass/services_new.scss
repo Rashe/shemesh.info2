@@ -1,11 +1,23 @@
 #services {
   margin-bottom: 20px;
+
+  .red{
+    color: #C80000;
+  }
+  .green{
+    color: #007f00;
+  }
+
 }
 
 .services {
   font-family: inherit;
   color: inherit;
   font-size: inherit;
+
+  .border_right {
+    border-right: 1px solid #fff;
+  }
 
   .widget {
     margin: 5em auto;
