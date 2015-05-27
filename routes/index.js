@@ -135,4 +135,13 @@ router.post('/user_info', function (req, res) {
     require('../controller/c-user_info').post(req, res);
 });
 
+router.post('/create_rss', function (req, res) {
+    if (!req.session.user) {
+        res.redirect('/login');
+    } else {
+        require('../controller/c-blog_rss').post(req, res);
+    }
+});
+
+
 module.exports = router;

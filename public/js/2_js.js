@@ -22,7 +22,8 @@
                 services: '#services',
                 turn_reg_but: '.turn_reg button',
                 blogeg: '#blogeg',
-                blogeg_article: '#blogeg_article'
+                blogeg_article: '#blogeg_article',
+                gen_rss: '.gen_rss'
 
             },
             classes: {
@@ -204,6 +205,9 @@ $(document).ready(function () {
     $(shmsh.settings.selectors.turn_reg_but).on('click', function () {
         shmsh.main.send_ajax({huj: "givi"}, '/reg_onOff');
         shmsh.main.turn_reg_text();
+    });
+    $(shmsh.settings.selectors.gen_rss).on('click', function () {
+        shmsh.main.send_ajax({rss: "gen"}, '/create_rss');
     });
     if ($('#make_post_id').length > 0) {
         shmsh.main.submit_sendForm('make_post', '/blog_make', '/blog_admin');
