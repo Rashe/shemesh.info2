@@ -23,7 +23,8 @@
                 turn_reg_but: '.turn_reg button',
                 blogeg: '#blogeg',
                 blogeg_article: '#blogeg_article',
-                gen_rss: '.gen_rss'
+                gen_rss: '.gen_rss',
+                rss_callback: '.rss_callback'
 
             },
             classes: {
@@ -144,6 +145,31 @@
                 });
                 return false;
             },
+            send_rss_generator: function (ajax_data, where) {
+                $.ajax({
+                    url: where,
+                    method: "POST",
+                    data: ajax_data,
+                    complete: function () {
+                        },
+                        statusCode: {
+                            200: function () {
+                                _that.main.rss_callback_notify(1, 'RSS generated');
+                            },
+                            403: function () {
+                                _that.main.rss_callback_notify(0, 'RSS file generation error');
+                            }
+                        }
+                });
+                return false;
+            },
+            rss_callback_notify: function (type, text){
+                if(type){
+                     $(_that.settings.selectors.rss_callback).append(text).addClass('success');
+                }else{
+                     $(_that.settings.selectors.rss_callback).append(text).addClass('error');
+                }
+            },
             turn_reg_text: function () {
                 var _selectors = _that.settings.selectors,
                     _turn_reg_but = $(_selectors.turn_reg_but),
@@ -207,7 +233,7 @@ $(document).ready(function () {
         shmsh.main.turn_reg_text();
     });
     $(shmsh.settings.selectors.gen_rss).on('click', function () {
-        shmsh.main.send_ajax({rss: "gen"}, '/create_rss');
+        shmsh.main.send_rss_generator({rss: "gen"}, '/create_rss');
     });
     if ($('#make_post_id').length > 0) {
         shmsh.main.submit_sendForm('make_post', '/blog_make', '/blog_admin');

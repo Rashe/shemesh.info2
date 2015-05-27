@@ -1,5 +1,4 @@
 var User = require('../model/m-user').User;
-var url = require('url');
 var data_content = require('../data/content');
 
 exports.get = function (req, res) {

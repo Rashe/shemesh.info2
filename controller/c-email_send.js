@@ -3,8 +3,7 @@ var config = require('../config/config');
 
 exports.post = function (req, res) {
 
-    var qRes = res,
-        email = req.body.email,
+    var email = req.body.email,
         text = req.body.text,
         subject = 'From shemesh.info about',
         reciever = config.email_reciever;

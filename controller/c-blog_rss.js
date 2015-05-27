@@ -1,7 +1,5 @@
 var Blog = require('../model/m-blog').Blog;
-var async = require('async');
-var errors = require('../data/errors');
-var data_content = require('../data/content');
+var fs = require('fs');
 
 exports.post = function (req, res) {
     Blog.showAllPosts(function (posts) {
@@ -34,17 +32,15 @@ exports.post = function (req, res) {
 
         console.log('t ', output);
 
-        //
-        //var fs = require('fs');
-        //fs.writeFile("/tmp/test", "Hey there!", function(err) {
-        //    if(err) {
-        //        return console.log(err);
-        //    }
-        //
-        //    console.log("The file was saved!");
-        //});
-        //
-
+        
+        
+        fs.writeFile('../public/rss.xml', output, function(err) {
+            if(err) {
+                return console.log(err);
+            }
+        
+            console.log("The file was saved!");
+        });
 
     });
 };

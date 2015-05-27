@@ -3,5 +3,6 @@
     "user_exist": "This username is in use",
     "no_suchUser": "There is no such user",
     "wrong_pass": "Password or username is wrong",
-    "disabled_reg": "Sorry, registration correctly disabled"
+    "disabled_reg": "Sorry, registration correctly disabled",
+    "rss_error": "There is an error while generating RSS"
 }
