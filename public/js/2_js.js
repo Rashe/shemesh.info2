@@ -146,6 +146,7 @@
                 return false;
             },
             send_rss_generator: function (ajax_data, where) {
+                $(_that.settings.selectors.gen_rss).addClass('disabled waiting').prop("disabled", true);
                 $.ajax({
                     url: where,
                     method: "POST",
@@ -155,9 +156,11 @@
                         statusCode: {
                             200: function () {
                                 _that.main.rss_callback_notify(1, 'RSS generated');
+                                $(_that.settings.selectors.gen_rss).removeClass('disabled waiting').prop("disabled", false);
                             },
                             403: function () {
                                 _that.main.rss_callback_notify(0, 'RSS file generation error');
+                                $(_that.settings.selectors.gen_rss).removeClass('disabled waiting').prop("disabled", false);
                             }
                         }
                 });
@@ -165,9 +168,9 @@
             },
             rss_callback_notify: function (type, text){
                 if(type){
-                     $(_that.settings.selectors.rss_callback).append(text).addClass('success');
+                     $(_that.settings.selectors.rss_callback).append(text).addClass('green');
                 }else{
-                     $(_that.settings.selectors.rss_callback).append(text).addClass('error');
+                     $(_that.settings.selectors.rss_callback).append(text).addClass('red');
                 }
             },
             turn_reg_text: function () {

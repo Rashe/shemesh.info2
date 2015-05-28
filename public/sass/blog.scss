@@ -61,11 +61,23 @@ body.blog {
 .heading_row {
   border-bottom: 1px solid #DDDDDD;
   width: 100%;
+  position: relative;
 
   h1 {
     font-family: $font_family;
     color: #6f6f6f;
     font-size: 3em;
+  }
+
+  .rss_show {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+
+    a {
+      font-size: 2em;
+      color: #FF6600;
+    }
   }
 }
 
@@ -177,7 +189,7 @@ body.blog {
     position: absolute;
     right: 0.5em;
     bottom: -2.5em;
-    &:hover{
+    &:hover {
       text-shadow: none;
     }
   }
@@ -287,16 +299,20 @@ body.blog {
 
   .blog {
 
-      .thePost {
-        iframe {
-          width: 100% !important;
-        }
-
-        img {
-          width: 100% !important;
-          float: inherit;
-        }
+    .thePost {
+      iframe {
+        width: 100% !important;
       }
+
+      img {
+        width: 100% !important;
+        float: inherit;
+      }
+    }
+
+    .rss_show {
+      display: none;
+    }
   }
 }
 
