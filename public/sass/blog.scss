@@ -300,6 +300,8 @@ body.blog {
   .blog {
 
     .thePost {
+      margin: 1em 0 2em;
+
       iframe {
         width: 100% !important;
       }
@@ -307,6 +309,12 @@ body.blog {
       img {
         width: 100% !important;
         float: inherit;
+      }
+
+      .more_link {
+        right: inherit;
+        left: 0;
+        bottom: -2.5em;
       }
     }
 
