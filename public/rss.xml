@@ -1,79 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
-    <channel>
-        <title>Shemesh.info RSS feed</title>
-        <description>Shemesh.info</description>
-        <link>https://shemesh.info</link>
-        <item>
-            <title>huj bla</title>
-            <link>https://shemesh.info/huj_bla</link>
-            <description>
-                <p><iframe frameborder="0" height="315" scrolling="no" src="https://www.youtube.com/embed/3avE4Zsp14g"
-                           width="560"></iframe>wd
-                </p>
-            </description>
-        </item>
-        <item>
-            <title>Ok, google</title>
-            <link>https://shemesh.info/websd</link>
-            <description>
-                <p>The website is redesigned, I love minimalistic and light. So I decided to remove the dark background.
-                    Also changed the fonts.
-                </p>
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0"><channel><title>Shemesh.info RSS feed</title><description>Shemesh.info</description><link>https://shemesh.info</link><item><title>huj bla</title><link>https://shemesh.info/blog/huj_bla</link><description><p><iframe frameborder="0" height="315" scrolling="no" src="https://www.youtube.com/embed/3avE4Zsp14g" width="560"></iframe>wd</p>
+</description></item><item><title>Ok, google</title><link>https://shemesh.info/blog/websd</link><description><p>The website is redesigned, I love minimalistic and light. So I decided to remove the dark background. Also changed the fonts.</p>
 
-                <p>The googles mobile frendly new search came out, so I decided to make my website mobile frendly. There
-                    is no much people visiting this website, but I made it bacause I can :D
-                </p>
+<p>The googles mobile frendly new search came out, so I decided to make my website mobile frendly. There is no much people visiting this website, but I made it bacause I can :D</p>
 
-                <p>Also I added CKeditor for my admin panel, it took me about 2 min, huge thanks to CKeditor team, made
-                    instalization easy.
-                </p>
+<p>Also I added CKeditor for my admin panel, it took me about 2 min, huge thanks to CKeditor team, made instalization easy.</p>
 
-                <p>Thats all I wanted to say. Maybe the next post will be about GTA 5 PC version.</p>
-            </description>
-        </item>
-        <item>
-            <title>Shadow of Mordor</title>
-            <link>https://shemesh.info/shadow_of_mordor</link>
-            <description>
-                <p>
-                    <img alt="shadow of mordor"
-                         src="http://gearnuke.com/wp-content/uploads/2014/10/Shadow-of-Mordor-Logo-600x324.jpg"
-                         style="height:324px; width:600px"/>
-                </p>
+<p>Thats all I wanted to say. Maybe the next post will be about GTA 5 PC version.</p>
+</description></item><item><title>Shadow of Mordor</title><link>https://shemesh.info/blog/shadow_of_mordor</link><description><p><img alt="shadow of mordor" src="http://gearnuke.com/wp-content/uploads/2014/10/Shadow-of-Mordor-Logo-600x324.jpg" style="height:324px; width:600px" /></p>
 
-                <p>Давно я не проходи2л игру до конца, давно не видел хорошей игры в которую можно было бы зависнуть на
-                    целые выходные. И вот после двух с половиной дней почти непрерывного убивания орков, я игру прошел,
-                    ура.
-                </p>
+<p>Давно я не проходи2л игру до конца, давно не видел хорошей игры в которую можно было бы зависнуть на целые выходные. И вот после двух с половиной дней почти непрерывного убивания орков, я игру прошел, ура.</p>
 
-                <p>Как по мне так игра не однозначная, пару раз в гневе я бил клаву и закрывал игру с матом и красными
-                    глазами когда толпы орков меня таки добивали, иногда я не мог остановиться и продолжал играть пол
-                    ночи. Не известная мне фирма Монолит выпускает игру, да еще и с заявой на эпичность, скачав ее я не
-                    очень надеялся на увидеть что-то стоящее, а игра оказалась стоящей, она затягивает. Игрока (лицом)
-                    окунают в историю Мордора, в мир Толкиена, где есть люди, эльфы, гномы, гопота и конечно же Голум.
-                    Однако сюжет в игре мне показался простоватым (после сезонов Игр престолов). В игре не шибко много
-                    героев-друзей главного героя, та блондиночка, он ей даже не вдул.
-                </p>
+<p>Как по мне так игра не однозначная, пару раз в гневе я бил клаву и закрывал игру с матом и красными глазами когда толпы орков меня таки добивали, иногда я не мог остановиться и продолжал играть пол ночи. Не известная мне фирма Монолит выпускает игру, да еще и с заявой на эпичность, скачав ее я не очень надеялся на увидеть что-то стоящее, а игра оказалась стоящей, она затягивает. Игрока (лицом) окунают в историю Мордора, в мир Толкиена, где есть люди, эльфы, гномы, гопота и конечно же Голум. Однако сюжет в игре мне показался простоватым (после сезонов Игр престолов). В игре не шибко много героев-друзей главного героя, та блондиночка, он ей даже не вдул.</p>
 
-            </description>
-        </item>
-        <item>
-            <title>The first post in blog</title>
-            <link>https://shemesh.info/the_first_post_in_blog</link>
-            <description>
-                <p>
-                    <img alt="" src="http://static-8.nexusmods.com/15/mods/153/images/167-1-1311802987.jpg"
-                         style="height:1200px; width:1920px"/>
-                </p>
+</description></item><item><title>The first post in blog</title><link>https://shemesh.info/blog/the_first_post_in_blog</link><description><p><img alt="" src="http://static-8.nexusmods.com/15/mods/153/images/167-1-1311802987.jpg" style="height:1200px; width:1920px" /></p>
 
-                <p>The first post usually happy to announce a new blog, but I&#39;m not happy at all. For 2 hours I
-                    tried to make this website work on production. Lol, this is the third time I have problems while
-                    deploy to production. It&#39;s never the same on your computer and real server, NEVER.. Anyway, I
-                    hope I&#39;ve done all and fixed all production bugs.
-                </p>
+<p>The first post usually happy to announce a new blog, but I&#39;m not happy at all. For 2 hours I tried to make this website work on production. Lol, this is the third time I have problems while deploy to production. It&#39;s never the same on your computer and real server, NEVER.. Anyway, I hope I&#39;ve done all and fixed all production bugs.</p>
 
-            </description>
-        </item>
-    </channel>
-</rss>
+</description></item></channel></rss>

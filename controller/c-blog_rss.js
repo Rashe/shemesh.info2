@@ -21,7 +21,7 @@ exports.post = function (req, res) {
         for (var i = 0; i < posts.length; i++) {
             output += item_el_start;
             output += '<title>' + posts[i].post_title + '</title>';
-            output += '<link>' + site_url + '/' + posts[i].post_link + '</link>';
+            output += '<link>' + site_url + '/blog/' + posts[i].post_link + '</link>';
             output += '<description>' + posts[i].post_teaser + '</description>';
             output += item_el_end;
         }
