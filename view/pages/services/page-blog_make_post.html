@@ -6,13 +6,15 @@
         <section class="row make_post">
             <form name="make_post" id="make_post_id">
                 <div class="large-9 columns">
-                    <div>
-                        <input type="text" name="title" placeholder="Title" required/>
+                    <div class="input_wrap">
+                        <label for="blog_title">Title</label>
+                        <input id="blog_title" type="text" name="title" required/>
                     </div>
-                    <div>
-                        <input type="text" name="post_link" placeholder="Post link(Leave blank to auto generate)"/>
+                    <div class="input_wrap">
+                        <label for="blog_url">Post link(Leave blank to auto generate)</label>
+                        <input id="blog_url" type="text" name="post_link" />
                     </div>
-                    <div>
+                    <div class="input_wrap">
                         <textarea placeholder="Post Body" name="post_body" rows="30" cols="50" required></textarea>
                         <script>
                             var editor = CKEDITOR.replace('post_body');
@@ -24,7 +26,7 @@
                 </div>
 
                 <div class="large-3 columns post_pref">
-                    <div>
+                    <div class="input_wrap">
                         <label for="checkbox_publish">Publish?</label>
                         <input type="checkbox" name="publish" id="checkbox_publish" value="Publish"/>
                     </div>

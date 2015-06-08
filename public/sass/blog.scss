@@ -24,14 +24,14 @@ body.blog {
 
     .clopener {
       left: 100%;
-      top: -7%;
+      //top: -7%;
 
       &.clopener_pos {
         left: 0;
       }
     }
     a {
-      font-size: 1.3em;
+      font-size: 1.5em;
       font-family: $font_family;
     }
 
@@ -43,7 +43,7 @@ body.blog {
 
       img {
         height: initial !important;
-        width: 40% !important;
+        width: 29% !important;
         float: left;
         padding: 0 0.5em 0.5em 0;
       }
@@ -53,9 +53,24 @@ body.blog {
 
 #blogeg, #blogeg_article {
   width: 60%;
-  display: inline-block;
-  vertical-align: top;
-  margin-bottom: 3em;
+  margin: 0 auto 3em;
+  //display: inline-block;
+  //margin-bottom: 3em;
+  //margin-left: 24%;
+
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+
+  &.clopener_ser{
+    width: 80%;
+    //margin-left: 2%;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
 }
 
 .heading_row {
@@ -85,6 +100,9 @@ body.blog {
   width: 100%;
   margin-bottom: 25px;
   border-bottom: 1px solid #DDDDDD;
+  //padding: 2em;
+  min-height: 26em;
+  //box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 
   .backtoBlog {
     cursor: pointer;
@@ -291,6 +309,12 @@ body.blog {
   #blogeg, #blogeg_article {
     width: 98%;
     margin: 2% 1%;
+  }
+
+  .post_wra {
+    padding: 0;
+    min-height: inherit;
+    box-shadow: none;
   }
 
 }

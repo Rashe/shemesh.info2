@@ -17,6 +17,48 @@
     border-right: 1px solid #fff;
   }
 
+  .turn_reg{
+
+    button{
+      width: inherit;
+      height: inherit;
+      font-size: 1.4em;
+    }
+  }
+
+  .gen_rss{
+    width: inherit;
+    height: inherit;
+    font-size: 1.4em;
+  }
+
+  .input_wrap{
+    position: relative;
+  }
+
+  .post_pref{
+
+    button{
+      width: 10em;
+      height: inherit;
+      font-size: 1.4em;
+    }
+
+    label{
+      position: relative;
+      top: inherit;
+    }
+  }
+
+  #edit_user_info{
+
+    button{
+      width: inherit;
+      height: inherit;
+      font-size: 1.4em;
+    }
+  }
+
 }
 
 .services {

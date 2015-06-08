@@ -5,10 +5,10 @@ $login_color: #5C5C5C;
 #login, #registration {
   width: 28%;
   margin: 5.5% auto 0;
-  background: $login_color;
+  //background: $login_color;
   min-height: 24em;
   padding-bottom: 11px;
-  box-shadow: 0 0 13px 13px rgba(2, 1, 1, 0.5);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   @include borderRadius(4px);
 }
 
@@ -20,8 +20,8 @@ $login_color: #5C5C5C;
   h1 {
     text-align: center;
     padding: 0.38em;
-    color: #008CBA;
-    text-shadow: 1px 0 0 #000;
+    //color: #008CBA;
+    //text-shadow: 1px 0 0 #000;
   }
 
   form {
@@ -29,31 +29,16 @@ $login_color: #5C5C5C;
   }
 
   .button {
-    color: #008CBA;
-    font-size: 17px;
-    padding: 0.5em 0.9em;
-    background-color: #383535;
-    transition: background-color 300ms ease-out;
-    border: 1px solid #252525;
-
-    &:hover {
-      text-shadow: 2px 0px 0px #000;
-      box-shadow: 0px 0px 3px 1px #008CBA;
-    }
-  }
-  input {
-    width: 12em;
-    height: 0.76em;
-    padding: 0.6em;
-    color: #008CBA;
-    font-size: 17px;
-    border: 1px solid #008CBA;
-
-    &:active {
-      color: grey;
-    }
+    font-size: 1.4em;
   }
 }
+
+#registration{
+  .button {
+    width: 8em;
+  }
+}
+
 
 #error_disp {
   display: none;
@@ -75,7 +60,9 @@ $login_color: #5C5C5C;
 }
 
 .inp_holder {
-  margin-top: 1.5em;
+  margin: 1.5em auto 0;
+  position: relative;
+  width: 80%;
 }
 
 .but_holder {
@@ -84,14 +71,14 @@ $login_color: #5C5C5C;
 
 .form_register, .form_login, .fp_pass {
   text-align: center;
-  color: #008CBA;
+  color: #E57373;
   margin-top: 2.5em;
   text-decoration: none;
   font-size: 14px;
   display: block;
 
   &:hover {
-    text-shadow: 1px 0 0 #000;
+    //text-shadow: 1px 0 0 #000;
     text-decoration: underline;
   }
 }

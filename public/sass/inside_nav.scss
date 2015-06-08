@@ -23,12 +23,15 @@
 }
 
 #aside_nav {
-  position: relative;
-  display: inline-block;
+  position: fixed;
+  width: 15%;
   height: 100%;
-  vertical-align: top;
-  width: 13%;
-  margin-right: 9%;
+  top: 0;
+
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
 
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
@@ -70,7 +73,7 @@
     color: #008CBA;
     position: absolute;
     left: 100%;
-    top: -7%;
+    top: -1em;
     font-size: 20px;
     z-index: 29;
     cursor: pointer;

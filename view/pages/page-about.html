@@ -13,10 +13,12 @@
         <p class="success_message">Thank you</p>
         <form name="form_send_ek" class="some_form_haha">
             <div class="form_wraper">
-                <input name="email" type="email" placeholder="Your email" required/>
+                <label for="about_mail">Your email</label>
+                <input id="about_mail" name="email" type="email" required/>
             </div>
             <div class="form_wraper">
-                <textarea name="text" cols="10" rows="10" placeholder="Your message" required></textarea>
+                <label for="about_textarea">Your message</label>
+                <textarea id="about_textarea" name="text" cols="10" rows="10" required></textarea>
             </div>
             <input type="text" class="hide"/>
             <button class="send_email">Send</button>

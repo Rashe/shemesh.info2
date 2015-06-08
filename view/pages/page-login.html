@@ -10,10 +10,12 @@
     </div>
     <form name="login_form">
         <div class="inp_holder">
-            <input name="username" type="text" placeholder="{{data.login_userPl}}" required pattern="[A-Za-z0-9]{1,20}"/>
+            <label for="auth_username">{{data.login_userPl}}</label>
+            <input id="auth_username" name="username" type="text" required pattern="[A-Za-z0-9]{1,20}"/>
         </div>
         <div class="inp_holder">
-            <input name="password" type="password" placeholder="{{data.login_passPl}}" required/>
+            <label for="auth_password">{{data.login_passPl}}</label>
+            <input id="auth_password" name="password" type="password" required/>
         </div>
         <div class="but_holder">
             <button class="button">{{data.login_button}}</button>

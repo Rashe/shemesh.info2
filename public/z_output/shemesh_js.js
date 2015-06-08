@@ -45,6 +45,7 @@ jQuery.easing['jswing'] = jQuery.easing['swing']; jQuery.extend(jQuery.easing, {
         this.init = function (settings) {
             this.main.clopener();
             this.main.submit_sendForm();
+            this.main.input_activate();
         };
 
         this.main = {
@@ -221,6 +222,19 @@ jQuery.easing['jswing'] = jQuery.easing['swing']; jQuery.extend(jQuery.easing, {
             error_disp: function (error_message) {
                 $(_that.settings.selectors.error_id).show();
                 $(_that.settings.selectors.error_id + ' p').text(error_message);
+            },
+            input_activate: function () {
+                var input_selector = 'input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=search], textarea';
+
+                $(document).on('focus', input_selector, function () {
+                    $(this).siblings('label, i').addClass('active');
+                });
+
+                $(document).on('blur', input_selector, function () {
+                    if ($(this).val().length === 0 && $(this).attr('placeholder') === undefined) {
+                        $(this).siblings('label, i').removeClass('active');
+                    }
+                });
             }
         }
     };

@@ -6,15 +6,16 @@
         <section class="row make_post">
             <form name="edit_post" id="edit_post_id">
                 <div class="large-9 columns">
-                    <div>
-                        <input type="text" name="title" placeholder="Title" value="{{ post_data.post_title }}"
+                    <div class="input_wrap">
+                        <label for="blog_title" class="active">Title</label>
+                        <input id="blog_title" type="text" name="title" value="{{ post_data.post_title }}"
                                required/>
                     </div>
-                    <div>
-                        <input type="text" name="post_link" placeholder="Post link(Leave blank to auto generate)"
-                               value="{{ post_data.post_link }}"/>
+                    <div class="input_wrap">
+                        <label for="blog_url" class="active">Post link(Leave blank to auto generate)</label>
+                        <input id="blog_url" type="text" name="post_link" value="{{ post_data.post_link }}"/>
                     </div>
-                    <div>
+                    <div class="input_wrap">
                         <textarea placeholder="Post Body" name="post_body" rows="30" cols="50"
                                   required>{{ post_data.post_body }}</textarea>
                         <script>
@@ -25,13 +26,13 @@
                             });
                         </script>
                     </div>
-                    <div>
+                    <div class="input_wrap">
                         <input type="hidden" name="post_id" value="{{ post_data.id }}"/>
                     </div>
                 </div>
-                <div class="large-3 columns post_pref">
+                <div class="large-3 columns post_pref input_wrap">
                     <label for="checkbox_publish">Publish?</label>
-                    <input type="checkbox" name="publish" id="checkbox_publish" value="Publish"/>
+                    <input type="checkbox" name="publish" id="checkbox_publish" class="filled-in" value="Publish"/>
                     <button>Edit post</button>
                 </div>
             </form>
