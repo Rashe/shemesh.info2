@@ -118,22 +118,27 @@
                     services = $(_selectors.services),
                     clopener_ser = _classes.clopener_ser,
                     blogeg = $(_selectors.blogeg),
-                    blogeg_article = $(_selectors.blogeg_article);
+                    blogeg_article = $(_selectors.blogeg_article),
+                    body = $('body');
                 clopener.on("click", function () {
-                    if (nav.hasClass(hidden)) {
-                        nav.removeClass(hidden);
-                        clopener.removeClass(clops);
-                        services.removeClass(clopener_ser);
-                        blogeg.removeClass(clopener_ser);
-                        blogeg_article.removeClass(clopener_ser);
-                    }
-                    else {
-                        nav.addClass(hidden);
-                        clopener.addClass(clops);
-                        services.addClass(clopener_ser);
-                        blogeg.addClass(clopener_ser);
-                        blogeg_article.addClass(clopener_ser);
-                    }
+                    body.toggleClass('menu_t');
+                    //if (nav.hasClass(hidden)) {
+                    //    nav.removeClass(hidden);
+                    //    clopener.removeClass(clops);
+                    //    services.removeClass(clopener_ser);
+                    //    blogeg.removeClass(clopener_ser);
+                    //    blogeg_article.removeClass(clopener_ser);
+                    //    body.removeClass('menu_t');
+                    //
+                    //}
+                    //else {
+                    //    nav.addClass(hidden);
+                    //    clopener.addClass(clops);
+                    //    services.addClass(clopener_ser);
+                    //    blogeg.addClass(clopener_ser);
+                    //    blogeg_article.addClass(clopener_ser);
+                    //    body.addClass('menu_t');
+                    //}
                 });
             },
             send_ajax: function (ajax_data, where) {
