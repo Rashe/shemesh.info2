@@ -7,8 +7,9 @@ body.blog {
   font-family: $blog_font;
 }
 
-.overlay{
-  display: none;
+.overlay {
+  opacity: 0;
+  visibility: hidden;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
@@ -16,6 +17,7 @@ body.blog {
   left: 0;
   top: 0;
   z-index: 2;
+  transition: all 0.5s ease;
 }
 
 .blog {
@@ -238,9 +240,9 @@ body.blog {
   margin: 2em 0;
 }
 
-.menu_t{
+.menu_t {
 
-  #blogeg, #blogeg_article{
+  #blogeg, #blogeg_article {
     width: 90%;
     left: 0;
     margin: 0 auto 15em auto;
@@ -248,7 +250,6 @@ body.blog {
   }
 
 }
-
 
 @media screen and (max-width: 1400px) {
 
@@ -265,7 +266,7 @@ body.blog {
 
   }
 
-  .menu_t{
+  .menu_t {
 
     #blogeg, #blogeg_article {
       width: 96%;
@@ -289,16 +290,16 @@ body.blog {
   .blog {
 
     .heading_row {
+      position: inherit;
 
       h1 {
         text-align: center;
       }
-    }
 
-    #inside {
-
-      &.hidden {
-        width: 0;
+      .rss_show {
+        position: fixed;
+        right: 0;
+        top: 0.7em;
       }
     }
 
@@ -308,10 +309,6 @@ body.blog {
       width: 100%;
       text-align: center;
       margin: 0 0 0;
-
-      &.hidden {
-        width: 0;
-      }
 
       li {
         display: inline;
@@ -330,6 +327,14 @@ body.blog {
       }
 
     }
+
+    &.menu_t {
+
+      #inside {
+        width: 100%;
+      }
+    }
+
   }
 
   #blogeg, #blogeg_article {
@@ -383,21 +388,26 @@ body.blog {
       background: #fff;
       z-index: 3;
 
-      &.hidden {
-        width: 70%;
-      }
-
       li {
         display: inline;
       }
 
       .clopener {
+
         display: block;
         font-size: 45px;
+        background: #3071a9;
+        position: fixed;
+        top: 40%;
+        left: -0.6em;
+        border-radius: 0 2em 2em 0;
+        width: 1em;
+        height: 2em;
 
-        &.clopener_pos {
-          left: 100%;
+        i {
+          display: none;
         }
+
       }
       a {
         font-size: 1.3em;
@@ -406,15 +416,47 @@ body.blog {
 
     }
 
+    &.menu_t {
 
-   &.menu_t{
+      .overlay {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.5s ease;
+      }
 
-     #blogeg, #blogeg_article {
-       width: 98%;
-       margin: 2% 1%;
-       left: inherit;
-     }
-   }
+      #blogeg, #blogeg_article {
+        width: 98%;
+        margin: 2% 1%;
+        left: inherit;
+      }
+
+      #aside_nav {
+        width: 70%;
+
+        #inside {
+
+          ul {
+
+            li {
+              display: block;
+              width: 100%;
+              font-size: 2em;
+
+              a {
+                padding: 0;
+              }
+
+            }
+
+          }
+
+        }
+
+        .clopener {
+          left: 70%;
+        }
+      }
+    }
 
   }
 }
