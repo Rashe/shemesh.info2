@@ -1,26 +1,24 @@
 {% extends '../layout/layout-main.html' %}
 {% block title %}Home{% endblock %}
 {% block content %}
-<section id="content_wra">
+<section id="content_wra" class="container">
     <div id="eban">
-        <img src="img/23.gif" alt="Piano man"/>
+        <img src="http://res.cloudinary.com/flere/image/upload/v1437997865/film_imgs/23_up8tzj.gif" alt="Piano man"/>
     </div>
     <div class="search_form">
             <div class="wrapper">
-                <label for="search">{{data.index_searchPlh}}</label>
-                <input type="text" id="search" name="search"/>
-                <button type="submit" class="search_btn">{{data.index_button}}</button>
+                <a class="waves-effect waves-light btn search_btn">Madness</a>
             </div>
     </div>
     <div class="message">
-        <p>{{data.index_message}} </p>
+        <p>I know this is stupid, but I still like it</p>
     </div>
     <div class="fuck">
-        <p>{{data.index_fuck}}</p>
+        <p>Nothing useful here</p>
     </div>
     <div class="here">
-        <a href="/">Blah</a>
-        <span>{{data.index_here}}</span>
+        <a href="/">Bloop</a>
+        <span>,Click to refresh</span>
     </div>
 </section>
 {% endblock %}

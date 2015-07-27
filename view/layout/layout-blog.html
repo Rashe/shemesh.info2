@@ -23,12 +23,14 @@
     {% endblock %}
 </head>
 <body class="{{css}}">
-<aside id="aside_nav">
+{#<aside id="aside_nav">#}
+<header>
     {# NAVIGATION #}
     {% block nav %}
     {% include '../blocks/block-nav_blog.html' with data%}
     {% endblock %}
-</aside>
+</header>
+{#</aside>#}
 
 
 {# CONTENT #}

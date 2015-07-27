@@ -241,4 +241,6 @@ $(document).ready(function () {
     if ($('#edit_user_info').length > 0) {
         shmsh.main.submit_sendForm('edit_user_info', '/user_info', '/user_info');
     }
+
+    $(".button-collapse").sideNav();
 });

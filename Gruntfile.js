@@ -52,7 +52,7 @@ module.exports = function (grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    '<%=cssDistDir%>main.css': '<%=sassDir%>init.scss'
+                    '<%=cssDistDir%>main.css': '<%=sassDir%>materialize.scss'
                 }
             }
         },

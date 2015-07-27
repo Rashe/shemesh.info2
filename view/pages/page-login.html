@@ -1,29 +1,37 @@
 {% extends '../layout/layout-main.html' %}
 {% block title %}Login{% endblock %}
 {% block content %}
-<section id="login">
-    <h1>{{data.login_h1}}</h1>
+    <section id="login" class="auth container">
+        <section class="row">
+            <div class="auth_form">
+                <h1>Login</h1>
 
-    <div data-alert id="error_disp" class="alert-box">
-        <p></p>
-        <span class="close">&times;</span>
-    </div>
-    <form name="login_form">
-        <div class="inp_holder">
-            <label for="auth_username">{{data.login_userPl}}</label>
-            <input id="auth_username" name="username" type="text" required pattern="[A-Za-z0-9]{1,20}"/>
-        </div>
-        <div class="inp_holder">
-            <label for="auth_password">{{data.login_passPl}}</label>
-            <input id="auth_password" name="password" type="password" required/>
-        </div>
-        <div class="but_holder">
-            <button class="button">{{data.login_button}}</button>
-        </div>
-    </form>
+                <form name="login_form">
+                    <div class="input-field">
+                        <label for="email">Email: </label>
+                        <input type="email" id="loginEmail" name="email" required class="validate">
+                    </div>
+                    <div class="input-field">
+                        <label for="password">Password: </label>
+                        <input type="password" id="loginPass" name="password" required class="validate">
+                    </div>
+                    <div class="input-field">
+                        <button class="btn waves-effect waves-light" type="submit" name="action">
+                            Login
+                        </button>
+                    </div>
+                    <input name="ghhh" type="text" id="for_bots_reg" class="hide"/>
+                </form>
 
-    <a href="/registration" class="form_register">{{data.login_regL}}</a>
-    <a href="/forgot_pass" class="fp_pass">Forgot password</a>
+                <div class="relog_link_wrap">
+                    <a href="/registration" class="form_register">Register</a>
+                    or
+                    <a href="/forgot_pass" class="fp_pass">Remind password</a>
+                </div>
 
-</section>
+            </div>
+        </section>
+    </section>
+
+
 {% endblock %}
