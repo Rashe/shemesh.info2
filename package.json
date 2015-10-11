@@ -3,7 +3,7 @@
   "version": "3.2.4",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./shemesh.js"
   },
   "dependencies": {
     "express": "*",

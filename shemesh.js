@@ -54,7 +54,6 @@ app.use(function (req, res, next) {
 });
 
 
-
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
     var err = new Error('Not Found');
@@ -90,7 +89,13 @@ else {
 swig.setFilter('substr', function (input) {
     var content = input.replace(/(<p>|<\/p>)/g, "");
     var shorten_content = content.substring(0, 450);
-    return ('<p>'+ shorten_content+ '</p>')
+    return ('<p>' + shorten_content + '</p>')
 });
+
+app.set('port', process.env.PORT || 3000);
+var server = app.listen(app.get('port'), function () {
+    console.log('Express server listening on port 3000');
+});
+
 
 module.exports = app;
