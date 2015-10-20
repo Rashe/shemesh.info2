@@ -177,6 +177,10 @@ nav {
     width: 240px;
 
   }
+
+  .rss_show{
+    display: none;
+  }
 }
 
 @media (max-width: 650px) {
@@ -202,5 +206,16 @@ nav {
 @media (max-width: 600px) {
   .rss_show {
     display: none;
+  }
+
+  #eban{
+
+    img{
+      width: 100%;
+    }
+  }
+
+  .auth_form, .form_send{
+    width: 100%;
   }
 }

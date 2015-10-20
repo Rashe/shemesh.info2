@@ -5,7 +5,7 @@ module.exports = function (grunt) {
         jsDistDir: 'public/z_output/',
         cssDir: 'public/css/',
         cssDistDir: 'public/z_output/',
-        sassDir: 'public/sass/',
+        sassDir: 'sass/',
         pkg: grunt.file.readJSON('package.json'),
         concat: {
             js: {
